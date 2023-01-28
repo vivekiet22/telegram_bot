@@ -71,10 +71,6 @@ bot.on('message',async (msg) => {
                     bot.sendMessage(chatId,"subscribed the bot ,you will get the temerarture of delhi every 1 hour");
                     bot.sendMessage(chatId,`Temperature in Delhi is : ${temp} degree celcius`)
                 });
-                // await weather.getTemperature(async (error, temp)=>{
-                //     bot.sendMessage(chatId,"subscribed the bot ,you will get the temerarture of delhi every 1 hour");
-                // bot.sendMessage(chatId,`Temperature in Delhi is : ${temp} degree celcius`)
-                // }
             }
 
         }
@@ -129,17 +125,10 @@ setInterval( async () => {
         console.log(temp);
         activeUser = await getSubscriber()
         activeUser.map((data)=>{
-            console.log("-------------------")
-            // console.log((data.user))
             bot.sendMessage(data.user,`Temperature in Delhi is : ${temp} degree celcius`)
     })
     });
-
-
-
-
-    
-}, 20000);
+}, 3600000);
 
   
 
